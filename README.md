@@ -13,7 +13,7 @@ Simple tool for updating the system.
 Requires: a Debian/Ubuntu version of linux and a Bash version ~4.4. [bash-sys](https://github.com/ojullien/bash-sys) and [bash-manageservices](https://github.com/ojullien/bash-manageservices) installed.
 
 1. [Download a release](https://github.com/ojullien/bash-updatesystem/releases) or clone this repository.
-2. Use [scripts/install.sh](https://github.com/ojullien/bash-updatesystem/tree/master/scripts) to automatically install the application in the /opt/oju/bash project folder.
+2. Use [scripts/install.sh](scripts/install.sh) to automatically install the application in the /opt/oju/bash project folder.
 3. If needed, add `PATH="$PATH:/opt/oju/bash/bin"` to the .profile files.
 
 ## Features
@@ -49,12 +49,12 @@ As this tool is just a wrapper to the packaging tool functions, I didn't write a
 
 Thanks you for taking the time to contribute. Please fork the repository and make changes as you'd like.
 
-As I use these scripts for my own projects, they contain only the features I need. But If you have any ideas, just open an [issue](https://github.com/ojullien/bash-updatesystem/issues/new) and tell me what you think. Pull requests are also warmly welcome.
+As I use these scripts for my own projects, they contain only the features I need. But If you have any ideas, just open an [issue](https://github.com/ojullien/bash-updatesystem/issues/new/choose) and tell me what you think. Pull requests are also warmly welcome.
 
-If you encounter any **bugs**, please open an [issue](https://github.com/ojullien/bash-updatesystem/issues/new).
+If you encounter any **bugs**, please open an [issue](https://github.com/ojullien/bash-updatesystem/issues/new/choose).
 
 Be sure to include a title and clear description,as much relevant information as possible, and a code sample or an executable test case demonstrating the expected behavior that is not occurring.
 
 ## License
 
-This project is open-source and is licensed under the [MIT License](https://github.com/ojullien/bash-updatesystem/blob/master/LICENSE).
+This project is open-source and is licensed under the [MIT License](LICENSE).
