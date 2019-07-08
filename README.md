@@ -1,4 +1,4 @@
-# Bash-updatesystem
+# Bash-UpdateSystem
 
 Simple tool for updating the system.
 
