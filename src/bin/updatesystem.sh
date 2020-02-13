@@ -36,9 +36,6 @@ readonly m_DIR_REALPATH="$(realpath "$(dirname "$0")")"
 . "${m_DIR_SYS}/config.sh"
 # shellcheck source=/dev/null
 . "${m_DIR_SYS}/package.sh"
-# shellcheck source=/dev/null
-. "${m_DIR_SYS}/service.sh"
-Config::load "manageservices"
 Config::load "updatesystem"
 # shellcheck source=/dev/null
 . "${m_DIR_APP}/updatesystem/app.sh"
@@ -52,7 +49,6 @@ Config::load "updatesystem"
 ## Trace
 ## -----------------------------------------------------------------------------
 Constant::trace
-ManageServices::trace
 UpdateSystem::trace
 
 ## -----------------------------------------------------------------------------
@@ -61,15 +57,6 @@ UpdateSystem::trace
 String::separateLine
 String::notice "Today is: $(date -R)"
 String::notice "The PID for $(basename "$0") process is: $$"
-Console::waitUser
-
-## -----------------------------------------------------------------------------
-## Disable & stop services
-## -----------------------------------------------------------------------------
-String::separateLine
-Service::disableServices ${m_SERVICES_DISABLE}
-String::separateLine
-Service::stopServices ${m_SERVICES_STOP}
 Console::waitUser
 
 ## -----------------------------------------------------------------------------
@@ -117,16 +104,6 @@ Console::waitUser
 String::separateLine
 UpdateSystem::updateDB
 Console::waitUser
-
-## -----------------------------------------------------------------------------
-## Start services
-## -----------------------------------------------------------------------------
-UpdateSystem::finish() {
-    String::separateLine
-    Service::startServices ${m_SERVICES_START}
-    String::notice "Now is: $(date -R)"
-}
-trap UpdateSystem::finish EXIT SIGQUIT SIGTERM SIGINT ERR
 
 ## -----------------------------------------------------------------------------
 ## END
